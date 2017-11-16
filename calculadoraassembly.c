@@ -1,6 +1,6 @@
 /*Calculadora ASM
 Faculdade Anhanguera
-Aluno: Matheus Guedes  RA: 1800586981   2∫Semestre
+Aluno: Matheus Guedes  RA: 1800586981   2¬∫Semestre
 
 */
 #include <stdio.h>
@@ -21,7 +21,7 @@ int main(void)
     do{
         system("cls");
         printf("\tCALCULADORA ASM\n\n");
-        printf("[1]SOMA\t\t\t[2]SUBTRA«√O\n[3]MULTIPLICA«√O\t[4]DIVIS√O\n[5]SAIR\n\n");
+        printf("[1]SOMA\t\t\t[2]SUBTRA√á√ÉO\n[3]MULTIPLICA√á√ÉO\t[4]DIVIS√ÉO\n[5]SAIR\n\n");
         scanf(" %d", &opc);
 
         switch(opc)
@@ -37,7 +37,7 @@ int main(void)
                 break;
                 case 2:
                         system("cls");
-                        printf("SUBTRA«√O ASM\n\n");
+                        printf("SUBTRA√á√ÉO ASM\n\n");
                         printf("Digite o primeiro valor: ");
                         scanf(" %d", &num1);
                         printf("Digite o segundo valor: ");
@@ -46,7 +46,7 @@ int main(void)
                 break;
                 case 3:
                         system("cls");
-                        printf("MULTIPLICA«√O ASM\n\n");
+                        printf("MULTIPLICA√á√ÉO ASM\n\n");
                         printf("Digite o primeiro valor: ");
                         scanf(" %d", &num1);
                         printf("Digite o segundo valor: ");
@@ -55,7 +55,7 @@ int main(void)
                 break;
                 case 4:
                         system("cls");
-                        printf("DIVIS√O ASM\n\n");
+                        printf("DIVIS√ÉO ASM\n\n");
                         printf("Digite o primeiro valor: ");
                         scanf(" %d", &num1);
                         printf("Digite o segundo valor: ");
@@ -73,36 +73,36 @@ int main(void)
 
 int soma(void)
 {
-    __asm("movl _num1, %ebx ") ;    // Mover o que est· na variavel x para o registrador b
-    __asm("movl _num2, %eax") ;     // Mover o que est· na variavel y para o registrador a
-    __asm("addl %ebx,%eax");        // Somar o que est· na registrador b no a
-    __asm("movl %eax, _r") ;        // Mover o que est· no registrador a para a variavel r
-    return r;                       // retornar o q est· na variavel r
+    __asm("movl _num1, %ebx ") ;    // Mover o que est√° na variavel num1 para o registrador b
+    __asm("movl _num2, %eax") ;     // Mover o que est√° na variavel num2 para o registrador a
+    __asm("addl %ebx,%eax");        // Somar o que est√° na registrador b no a
+    __asm("movl %eax, _r") ;        // Mover o que est√° no registrador a para a variavel r
+    return r;                       // retornar o q est√° na variavel r
 }
 
 int sub(void)
 {
-    __asm("movl _num1, %ebx ") ;    // Mover o que est· na variavel x para o registrador b
-    __asm("movl _num2, %eax") ;     // Mover o que est· na variavel y para o registrador a
-    __asm("sub %eax,%ebx");         // Subtrair o que est· na registrador a no b
-    __asm("movl %ebx, _r") ;        // Mover o que est· no registrador b para a variavel r
-    return r;                       // retornar o q est· na variavel r
+    __asm("movl _num1, %ebx ") ;    // Mover o que est√° na variavel num1 para o registrador b
+    __asm("movl _num2, %eax") ;     // Mover o que est√° na variavel num2 para o registrador a
+    __asm("sub %eax,%ebx");         // Subtrair o que est√° na registrador a no b
+    __asm("movl %ebx, _r") ;        // Mover o que est√° no registrador b para a variavel r
+    return r;                       // retornar o q est√° na variavel r
 }
 
 int mult(void)
 {
-    __asm("movl _num1, %ebx ") ;    // Mover o que est· na variavel x para o registrador b
-    __asm("movl _num2, %eax") ;     // Mover o que est· na variavel y para o registrador a
+    __asm("movl _num1, %ebx ") ;    // Mover o que est√° na variavel num1 para o registrador b
+    __asm("movl _num2, %eax") ;     // Mover o que est√° na variavel num2 para o registrador a
     __asm("imull %ebx,%eax");       // Multiplica o registrador bx com o ax e armazena em ax
-    __asm("movl %eax, _r") ;        // Mover o que est· no registrador a para a variavel r
-    return r;                       // retornar o q est· na variavel r
+    __asm("movl %eax, _r") ;        // Mover o que est√° no registrador a para a variavel r
+    return r;                       // retornar o q est√° na variavel r
 }
 
 float div(void)
 {
-    __asm("movl _num1, %eax ") ;    // Mover o que est· na variavel x para o registrador b
-    __asm("movl _num2, %ebx") ;     // Mover o que est· na variavel y para o registrador a
+    __asm("movl _num1, %eax ") ;    // Mover o que est√° na variavel num1 para o registrador a
+    __asm("movl _num2, %ebx") ;     // Mover o que est√° na variavel num2 para o registrador b
     __asm("idivl %ebx");
-    __asm("movl %eax, _r") ;        // Mover o que est· no registrador a para a variavel r
-    return r;                       // retornar o q est· na variavel r
+    __asm("movl %eax, _r") ;        // Mover o que est√° no registrador a para a variavel r
+    return r;                       // retornar o q est√° na variavel r
 }
